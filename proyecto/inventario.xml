@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml es un archivo de texto estructurado donde guardamos la lista de lo que vendrerá la tienda
+ será simulación de la base de datos, en lugar de en el HTML ponerlos a mano, los leeremos desde aquí -->
+
+
+<maquillaje>
+    <producto>
+        <id>1</id>
+        <nombre>Labial Matte Velvet</nombre>
+        <categoria>Labios</categoria>
+        <precio>180</precio>
+    </producto>
+    <producto>
+        <id>2</id>
+        <nombre>Paleta de Sombras Neón</nombre>
+        <categoria>Ojos</categoria>
+        <precio>350</precio>
+    </producto>
+</maquillaje>

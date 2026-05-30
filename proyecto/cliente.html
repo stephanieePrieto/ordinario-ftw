@@ -1,0 +1,28 @@
+<!-- esqueleto de la página web quue abrirá el comprador. Le da al navegador los títulos
+  y un contenedor especial vacío donde JavaScript va a "dibujar" los labiales más adelante.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Glow - Catálogo de Maquillaje</title>
+</head>
+<body>
+
+    <h1>Tienda de maquillaje</h1>
+
+    <!-- Este div está vacío. JavaScript meterá los productos aquí -->
+    <div id="catalogo"></div> <!--DOM etiqueta con nombre para que 
+    JavaScript pueda encontrarlo en toda la página y meterle cosas adentro-->
+
+    <hr>
+    <h2>Tu carrito</h2>
+    <p>Total acumulado: $<span id="total">0</span></p>
+
+    <!-- Enlazamos el archivo de JavaScript que crearemos en la siguiente fase-->
+    <script src="cliente.js"></script>
+</body>
+</html>
+
+<!-- El div vacío en HTML, es el encargado de ir a la bodega, traer las cajas de maquilla 
+y acomodarlas en los estantes de JavaScript -- >
