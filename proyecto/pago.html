@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Tech - Pago</title>
+</head>
+<body>
+    
+    <h1>Método de Pago</h1>
+    <p>Selecciona cómo deseas liquidar tu pedido de cosméticos:</p>
+
+    <div style="border: 2px solid purple; padding: 20px; width: 380px;">
+        <p>
+            <label>Selecciona tu método:</label><br>
+            <select id="metodo-seleccionado">
+                <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                <option value="efectivo">Pago en Efectivo</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Número de Tarjeta:</label><br>
+            <input ype="text" id="campo-tarjeta" placeholder="1234 5678 1234 5678">
+        </p>
+        <p>
+            <label>Código de Seguridad (CVV):</label><br>
+            <input type="text" id="campo-cvv" placeholder="123" style="width: 60px;">
+        </p>
+    </div>
+
+    <br>
+    <button id="btn-regresar-datos">Regresar a Mis Datos</button>
+    <button id="btn-confirmar-pago">Finalizar Compra</button>
+    
+    <script src="pago.js"></script>
+</body>
+</html>
