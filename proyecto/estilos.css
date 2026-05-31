@@ -1,30 +1,182 @@
 /* fondo general de la tienda */
 
 body {
-    background-color: #FFF0F5;
-    font-familiy: sans-serif;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Garamond', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFFFF;
+    color:#333333
 }
 
-/* Diseño de tarjetas */
-.tarjeta-producto {
-    background-color: white;
-    display: incline-block;
-    width: 220px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 5px 5px 15px purple;
+/* barra de navegación superior */
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #f2f2f2;
 }
 
-.btn-agregar {
-    background-color: #FF1492;
+.barra-navegacion .logo{
+    font-size: 32px;
+    font-weight: bold;
+    color: #29032e;
+}
+
+.menu-enlaces a{
+    text-decoration: none;
+    color: #555555;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.menu-enlaces a:hover, .menu-enlaces a.activo {
+    color: #47082a;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 4px;
+}
+
+.banner-navegacion{
+    background-image: url('imagenes/marmol.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+} 
+
+.contenido-banner {
+    width: 45%;
+    text-align: left;
+}
+
+.imagen-banner-contenedor{
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.foto-maquillaje-banner {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 24px;
+}
+
+.contenido-banner h1 {
+    font-size: 60px;
+    color: #29032e;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.contenido-banner p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.0;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #d4927db7;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 16px;
     font-weight: bold;
+    border-radius: 20px; 
     cursor: pointer;
+    box-shadow: 0 4px 10px rgb(72, 11, 31);
+    transition: all 0.3s ease;
 }
 
+button:hover {
+    background-color: #130108;
+    box-shadow: 0 4px 15px rgba(112, 38, 4, 0.963);
+    transform: translateX(10px);
+}
+
+
+.seccion-categorias {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.seccion-categorias h2 {
+    font-size: 42px;
+    color: #3a1c3e;
+    margin-bottom: 5px;
+}
+
+.seccion-categorias .subtitulo {
+    color: #888888;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+
+.contenedor-esferas {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.tarjeta-categoria h3 {
+    font-size: 40px;
+    color: #3a1c3e;
+    margin: 15px 0 10px 0;
+}
+
+.esfera-imagen {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; 
+    box-shadow: 0 0 20px rgb(96, 52, 10); 
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #ffffff;
+}
+
+
+.esfera-ojos {
+    background-image: url('imagenes/ojos.jpeg');
+}
+
+.esfera-labios {
+    background-image: url('imagenes/labios.jpeg');
+    background-position: center 30%;
+}
+
+.esfera-rostro {
+    background-image: url('imagenes/rostro.jpeg');
+}
+
+
+.tarjeta-categoria button {
+    padding: 6px 16px;
+    font-size: 16px;
+    background-color: #d4927db7;
+    color: #000000;
+    box-shadow: none;
+}
+
+.tarjeta-categoria button:hover {
+    background-color: #2c0011;
+    color: white;
+}
