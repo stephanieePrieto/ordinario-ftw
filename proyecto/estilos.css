@@ -294,9 +294,33 @@ button:hover {
     box-shadow: none;
 }
 
-/* ===================================================
-   MAPEO DE IMÁGENES REALES PARA LOS 24 PRODUCTOS
-   =================================================== */
+.pie-pagina {
+    display: flex;
+    justify-content: space-between; /* Empuja el copyright a la izquierda y los enlaces a la derecha */
+    align-items: center;
+    padding: 30px 80px; /* Mismo colchón lateral que usamos en tu banner */
+    background-color: #faf5f6; /* Un rosa pálido ultra suave para cerrar la tienda */
+    border-top: 1px solid #f2e6e8;
+    font-size: 14px;
+    margin-top: 50px; /* Separa el footer de la sección de las esferas */
+}
+
+.footer-copyright {
+    color: #888888;
+}
+
+.footer-enlaces a {
+    text-decoration: none;
+    color: #666666;
+    margin-left: 20px; /* Separa los tres enlaces entre sí */
+    transition: color 0.3s ease;
+}
+
+/* Efecto interactivo por si la clienta pasa el cursor encima */
+.footer-enlaces a:hover {
+    color: #47082a; /* Tu color uva característico */
+}
+
 
 /* --- FOTOS DE OJOS --- */
 .foto-producto-placeholder.ojos-0 { background-image: url('ojos/ojos1.jpg'); }
@@ -315,7 +339,7 @@ button:hover {
 .foto-producto-placeholder.labios-11 { background-image: url('labios/labios4.jpg'); }
 .foto-producto-placeholder.labios-12 { background-image: url('labios/labios5.webp'); }
 .foto-producto-placeholder.labios-13 { background-image: url('labios/labios6.webp'); }
-.foto-producto-placeholder.labios-14 { background-image: url('labios/labios7.jpeg') }
+.foto-producto-placeholder.labios-14 { background-image: url('labios/labios7.jpeg'); }
 .foto-producto-placeholder.labios-15 { background-image: url('labios/labios8.webp'); }
 
 /* --- FOTOS DE ROSTRO --- */
