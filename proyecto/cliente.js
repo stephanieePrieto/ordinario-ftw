@@ -1,71 +1,84 @@
 // PARTE 2
-// 1. Buscamos el div vacío en el HTML usando su id
-//2. AJAX es...
+// 1. Buscamos el div vacío en el HTML usando su id.
+// Ojo: En tu HTML actual le pusimos id="contenedor-tarjetas", así que apuntamos a ese.
+const contenedor = document.getElementById("contenedor-tarjetas");
 
-const contenedor = document.getElementById("catalogo");
-// esto es como apuntar al elemento del HTML. JavaScript ahora sabe 
-// exactamente donde trabajar.
-
-//creamos la función principal para ir a traer los datos
+// creamos la función principal para ir a traer los datos con AJAX
 function cargarInventario(){
-    //3. Creamos un objeto XMLHttpRequest
+    // 3. Creamos un objeto XMLHttpRequest
     const xhttp = new XMLHttpRequest();
     // es una herramienta nativa, sirve para pedirle datos a un archivo externo sin necesidad de 
     // que la página se recargue por completo
 
-    //Le programamos la función que se va a ejecutar cuando el estado de la petición cambie
+    // Le programamos la función que se va a ejecutar cuando el estado de la petición cambie
     xhttp.onload = function(){
-        //guardamos el archivo XML que nos regresó el servidor dentro de una constante
+        // guardamos el archivo XML que nos regresó el servidor dentro de una constante
         const xmlDoc = xhttp.responseXML;
 
-        //mandamos ese archivo a otra función para que lo lea
+        // mandamos ese archivo a otra función para que lo lea
         mostrarProductos(xmlDoc);
     };
 
-    //le decimos al mensajero a qué archivo ir a buscar ("GET") y donde está ("inventario.xml")
+    // le decimos al mensajero a qué archivo ir a buscar ("GET") y donde está ("inventario.xml")
     xhttp.open("GET", "inventario.xml");
-    //enviamos la petición
+    
+    // enviamos la petición
     xhttp.send();
+}
 
-    //Parte 2.2 Recibir esa caje con datos de maquillaje, abrirla y acomodar cada producto en nuestro aparador vacío (div)
+// Parte 2.2 Recibir esa caja con datos de maquillaje, abrirla y acomodar cada producto en nuestro aparador vacío
+function mostrarProductos(xml){
 
-    function mostrarProductos(xml){
-        //Extraemos todos los elementos <producto> del archivo XML y los 
-        //guardamos en una lista
-        //Esto crea un arreglo con los productos para poder 1 por 1.
+    const parametros = new URLSearchParams(window.location.search);
+    const categoriaSeleccionada = parametros.get("categoria");
+    const listaProductos = xml.getElementsByTagName("producto");
 
-        const listaProductos = xml.getElementsByTagName("producto");
+    let tarjetasHTML  = "";
 
-        //creamos una variable para guardar el código HTML que vamos a generar
-        let tarjetasHTML  = "";
+    // iniciamos un ciclo for clásico para revisar cada producto de la lista
+    for(let i = 0; i < listaProductos.length; i++){
+        
+        // Sacamos el texto que está adentro de la etiqueta <nombre> del producto actual
+        let nombre = listaProductos[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+        // Sacamos el texto que está adentro de la etiqueta <precio> del producto actual
+        let precio = listaProductos[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
+        // Sacamos el texto que está adentro de la etiqueta <categoria> del producto actual
+        let descripcion = listaProductos[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
 
-        // iniciamos un ciclo for clásico para revisar cada prodcto de la lista
-        for(let i = 0; i < listaProductos.length; i++){
-            //Sacamos el texto que está adentro de la etiqueta <nombre> del producto actual
-            let nombre = listaProductos[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
-            //Sacamos el texto que está adentro de la etiqueta <precio> del producto actual
-            let precio = listaProductos[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
-            //Sacamos el texto que está adentro de la etiqueta <descripcion> del producto actual
-            let descripcion = listaProductos[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
+        let claseFotoUnica = descripcion.toLowerCase() + "-" + i;
 
-
-            // listaProductos[i] en la primera vuelta JS va y revisa el primer prodcuto del XML y así.
-            //childNodes[0].nodeValue es para decirle que queremos el texto que está adentro de la etiqueta, no la etiqueta en sí.
-            //tarjetasHTML += significa "deja lo que ya tenías y agrega eso nevo"
+        // listaProductos[i] en la primera vuelta JS va y revisa el primer producto del XML y así.
+        // childNodes[0].nodeValue es para decirle que queremos el texto que está adentro de la etiqueta, no la etiqueta en sí.
+        
+        // --- CONDICIONAL DE FILTRADO (Pág. 3 de tus apuntes) ---
+        // Si no se seleccionó ninguna categoría en la portada (es null), O si la categoría del producto coincide con la selección...
+        if (categoriaSeleccionada === null || descripcion === categoriaSeleccionada) {
+            
+            // tarjetasHTML += significa "deja lo que ya tenías y agrega esto nuevo"
+            // Metemos las clases semánticas que ya programamos en tu estilos.css para que se vea como la IA
             tarjetasHTML += `
-                <div style="border: 2px solid purple; padding: 10px; margin: 10px; display: inline-block; width: 200px;">
-                    <h3>${nombre}</h3>
-                    <p>Categoria: <strong>${descripcion}</strong></p>
-                    <p>Precio: $${precio}</p>
-                    <button>Agregar al carrito</button>
+                <div class="tarjeta-producto">
+                    <div class="foto-producto-placeholder ${claseFotoUnica}"></div>
+                    
+                    <div class="info-producto">
+                        <span class="tag-categoria">${descripcion}</span>
+                        <h3 class="titulo-producto">${nombre}</h3>
+                        <p class="precio-producto">$${precio}</p>
+                        
+                        <div class="botones-tarjeta">
+                            <button class="btn-ver-mas" onclick="window.location.href='detalle.html'">Ver más</button>
+                            <button class="btn-agregar" data-precio="${precio}">Agregar</button>
+                        </div>
+                    </div>
                 </div>
             `;
         }
-
-        //Le inyectamos todas las tarjetas acumuladas al div vacío que capturamos al inicio.
-        contenedor.innerHTML = tarjetasHTML;
     }
+
+    // Le inyectamos todas las tarjetas acumuladas al div vacío que capturamos al inicio.
+    // Sacado de la pág. 2 y 5: Uso de .innerHTML
+    contenedor.innerHTML = tarjetasHTML;
 }
 
-//Mandamos a llamar la función inicial para que todo arranque automáticamente
+// Mandamos a llamar la función inicial para que todo arranque automáticamente
 cargarInventario();

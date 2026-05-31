@@ -155,16 +155,16 @@ button:hover {
 
 
 .esfera-ojos {
-    background-image: url('imagenes/ojos.jpeg');
+    background-image: url('ojos/ojos.jpeg');
 }
 
 .esfera-labios {
-    background-image: url('imagenes/labios.jpeg');
+    background-image: url('labios/labios.jpeg');
     background-position: center 30%;
 }
 
 .esfera-rostro {
-    background-image: url('imagenes/rostro.jpeg');
+    background-image: url('rostro/rostro.jpeg');
 }
 
 
@@ -179,4 +179,157 @@ button:hover {
 .tarjeta-categoria button:hover {
     background-color: #2c0011;
     color: white;
+}
+
+/*catalogo*/
+
+.seccion-catalogo {
+    padding: 40px 50px;
+    background-color: #ffffff;
+}
+
+.subtitulo-catalogo {
+    color: #888888;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.tarjeta-producto {
+    background-color: #ffffff;
+    width: 260px;
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #f2f2f2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(71, 8, 42, 0.12); 
+}
+
+
+.foto-producto-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #fbe7eb;
+    background-image: none;
+}
+
+
+.info-producto {
+    padding: 20px;
+    text-align: left;
+}
+
+.tag-categoria {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #47082a; 
+    font-weight: bold;
+}
+
+.titulo-producto {
+    font-size: 20px;
+    color: #29032e;
+    margin: 5px 0 10px 0;
+}
+
+.precio-producto {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0 0 15px 0;
+}
+
+
+.botones-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.btn-ver-mas {
+    background-color: #ffffff;
+    color: #47082a;
+    border: 1px solid #47082a;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+.btn-ver-mas:hover {
+    background-color: #fbe7eb;
+    transform: none;
+    box-shadow: none;
+}
+
+
+.btn-agregar {
+    background-color: #d4927db7; 
+    color: white;
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 12px;
+    box-shadow: none;
+    flex: 1; 
+}
+
+.btn-agregar:hover {
+    background-color: #29032e;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===================================================
+   MAPEO DE IMÁGENES REALES PARA LOS 24 PRODUCTOS
+   =================================================== */
+
+/* --- FOTOS DE OJOS --- */
+.foto-producto-placeholder.ojos-0 { background-image: url('ojos/ojos1.jpg'); }
+.foto-producto-placeholder.ojos-1 { background-image: url('ojos/ojos2.jpg'); }
+.foto-producto-placeholder.ojos-2 { background-image: url('ojos/ojos3.jpeg'); }
+.foto-producto-placeholder.ojos-3 { background-image: url('ojos/ojos4.webp'); }
+.foto-producto-placeholder.ojos-4 { background-image: url('ojos/ojos5.webp'); }
+.foto-producto-placeholder.ojos-5 { background-image: url('ojos/ojos6.jpeg'); }
+.foto-producto-placeholder.ojos-6 { background-image: url('ojos/ojos7.avif'); }
+.foto-producto-placeholder.ojos-7 { background-image: url('ojos/ojos8.png'); }
+
+/* --- FOTOS DE LABIOS --- */
+.foto-producto-placeholder.labios-8 { background-image: url('labios/labios1.jpg'); }
+.foto-producto-placeholder.labios-9 { background-image: url('labios/labios2.jpg'); }
+.foto-producto-placeholder.labios-10 { background-image: url('labios/labios3.avif'); }
+.foto-producto-placeholder.labios-11 { background-image: url('labios/labios4.jpg'); }
+.foto-producto-placeholder.labios-12 { background-image: url('labios/labios5.webp'); }
+.foto-producto-placeholder.labios-13 { background-image: url('labios/labios6.webp'); }
+.foto-producto-placeholder.labios-14 { background-image: url('labios/labios7.jpeg') }
+.foto-producto-placeholder.labios-15 { background-image: url('labios/labios8.webp'); }
+
+/* --- FOTOS DE ROSTRO --- */
+.foto-producto-placeholder.rostro-16 { background-image: url('rostro/rostro1.png'); }
+.foto-producto-placeholder.rostro-17 { background-image: url('rostro/rostro2.png'); }
+.foto-producto-placeholder.rostro-18 { background-image: url('rostro/rostro3.jpg'); }
+.foto-producto-placeholder.rostro-19 { background-image: url('rostro/rostro4.jpeg'); }
+.foto-producto-placeholder.rostro-20 { background-image: url('rostro/rostro5.png'); }
+.foto-producto-placeholder.rostro-21 { background-image: url('rostro/rostro6.webp'); }
+.foto-producto-placeholder.rostro-22 { background-image: url('rostro/rostro7.jpeg'); }
+.foto-producto-placeholder.rostro-23 { background-image: url('rostro/rostro8.jpg'); }
+
+/* Regra general para que todas las fotos se adapten perfecto al cuadro */
+.foto-producto-placeholder {
+    background-size: cover;
+    background-position: center;
 }
