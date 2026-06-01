@@ -1,35 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Tech - Datos de Envío</title>
+    <title>Beauty Lab - Datos de Envío</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    
-    <h1>Información de Entrega</h1>
-    <p>Por favor, llena los siguientes campos para asegurar que tus cosméticos lleguen a la puerta de tu casa:</p>
 
-    <div style="border: 2px solid purple; padding: 20px; width: 350px;">
-        <p>
-            <label>Nombre Completo:</label><br>
-            <input type="text" id="campo-nombre" placeholder="Ej. Stephanie Prieto">
-        </p>
+    <header class="barra-navegacion">
+        <div class="logo">Beauty Lab</div>
+        <nav class="menu-enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html" class="activo">Mi carrito</a>
+            <a href="soporte.html">Soporte</a>
+        </nav>
+    </header>
 
-        <p>
-            <label>Correo Electrónico:</label><br>
-            <input type="text" id="campo-correo" placeholder="ejemplo@correo.com">
-        </p>
+    <main class="contenedor-formulario">
+        <div class="tarjeta-formulario">
+            <h2>Información de Entrega y Pago</h2>
+            <p class="subtitulo-formulario">Completa tus datos de envío y método de pago para procesar la orden.</p>
+            
+            <form id="formulario-envio">
+                <div class="grupo-input">
+                    <label for="nombre-cliente">Nombre Completo</label>
+                    <input type="text" id="nombre-cliente" placeholder="Ej. Stephanie Prieto" required>
+                </div>
 
-        <p>
-            <label>Dirección de Envío:</label><br>
-            <input type="text" id="campo-direccion" placeholder="Calle, Número y Colonia">
-        </p>        
-    </div>
+                <div class="grupo-input">
+                    <label for="correo-cliente">Correo Electrónico</label>
+                    <input type="email" id="correo-cliente" placeholder="ejemplo@correo.com" required>
+                </div>
 
-    <br>
-    <button id="btn-cancelar-registro">Regresar al Carrito</button>
-    <button id="btn-guardar-datos">Continuar al Pago</button>
+                <div class="grupo-input">
+                    <label for="direccion-cliente">Dirección de Envío</label>
+                    <input type="text" id="direccion-cliente" placeholder="Calle, Número, Colonia" required>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #f2f2f2; margin: 30px 0;">
+
+                <h3 style="color: #29032e; margin-bottom: 15px; font-size: 18px;">Método de Pago </h3>
+
+                <div class="grupo-input">
+                    <label for="tarjeta-numero">Número de Tarjeta</label>
+                    <input type="text" id="tarjeta-numero" placeholder="1234 5678 1234 5678" maxlength="16" required>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="tarjeta-vence">Vencimiento</label>
+                        <input type="text" id="tarjeta-vence" placeholder="MM/AA" maxlength="5" required>
+                    </div>
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="tarjeta-cvv">CVV</label>
+                        <input type="password" id="tarjeta-cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+
+                <div class="botones-formulario">
+                    <button type="button" id="btn-regresar-carrito" class="btn-secundario">Volver a la Bolsa</button>
+                    <button type="submit" id="btn-finalizar">Finalizar Compra</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-copyright">
+            &copy; 2026 Beauty Lab. Todos los derechos reservados.
+        </div>
+        <div class="footer-enlaces">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
 
     <script src="datos.js"></script>
 </body>

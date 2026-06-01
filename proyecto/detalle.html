@@ -1,27 +1,47 @@
-<DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Glow Tech - Detalle del Producto</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Beauty Lab - Detalle del Producto</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
-        <h1>Detalle de tu Cosmético</h1>
+    <header class="barra-navegacion">
+        <div class="logo">Beauty Lab</div>
+        <nav class="menu-enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html" class="activo">Catálogo</a>
+            <a href="carrito.html">Mi carrito</a>
+            <a href="soporte.html">Soporte</a>
+        </nav>
+    </header>
 
-        <div style="border: 3px solid purple; padding: 20px; width: 400px; margin: 20px">
-            <h2 id="detalle-nombre">Nombre del Producto</h2>
-            <p>Categoría: <strong id="detalle-categoria">Categoría</strong></p>
-            <p style="font-size: xx-large; color:purple;">Precio: $<span id="detalle-precio">0</span></p>
-
-            <p><em>* Este producto está formulado con los más altos estándares de calidad para resaltar tu brillo natural.</em></p>
-
-            <button id="btn-volver">Volver al Catálogo</button>
-            <button id="btn-agregar-detalle">Añadir a mi Bolsa</button>
+    <main class="contenedor-detalle-producto">
+        <div class="columna-foto-detalle">
+            <div class="foto-detalle-placeholder"></div>
         </div>
 
-        <script src=""detalle.js"></script>
+        <div class="columna-info-detalle">
+            <span class="categoria-detalle-tag" id="detalle-categoria">Categoría</span>
+            <h1 id="detalle-nombre">Nombre del Producto</h1>
+            <p class="precio-detalle-tag">$<span id="detalle-precio">0.00</span></p>
 
-            <footer class="pie-pagina">
+            <p class="descripcion-detalle-texto">
+                Este producto está formulado con los más altos estándares de calidad para resaltar tu brillo natural. 
+                Textura ultra sedosa y acabado de larga duración para una experiencia boutique única.
+            </p>
+
+            <hr class="separador-detalle">
+
+            <div class="acciones-detalle">
+                <button id="btn-volver" class="btn-secundario">Volver al Catálogo</button>
+                <button id="btn-agregar-detalle">Añadir a mi Bolsa</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
         <div class="footer-copyright">
             &copy; 2026 Beauty Lab. Todos los derechos reservados.
         </div>
@@ -31,5 +51,7 @@
             <a href="#">Contacto</a>
         </div>
     </footer>
-    </body>
-    </html>
+
+    <script src="detalle.js"></script>
+</body>
+</html>

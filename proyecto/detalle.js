@@ -1,4 +1,4 @@
-// 1. Buscamos los elementos vacíos del HTML usando su id para poder rellenarlos
+
 
 const textoNombre = document.getElementById("detalle-nombre");
 const textoDescripcion = document.getElementById("detalle-categoria");
@@ -7,7 +7,7 @@ const textoPrecio = document.getElementById("detalle-precio");
 const botonVolver = document.getElementById("bton-volver");
 const botonAgregar = document.getElementById("bton-agregar-detalle");
 
-// 2. Funcion para rellenar la pantalla con los datos del maquillaje
+
 function simularCargaProducto(){
     textoNombre.innerText = "Paletade Sombras Neón";
     textoDescripcion.innerText = "Ojos";

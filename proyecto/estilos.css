@@ -293,35 +293,6 @@ button:hover {
     transform: none;
     box-shadow: none;
 }
-
-.pie-pagina {
-    display: flex;
-    justify-content: space-between; /* Empuja el copyright a la izquierda y los enlaces a la derecha */
-    align-items: center;
-    padding: 30px 80px; /* Mismo colchón lateral que usamos en tu banner */
-    background-color: #faf5f6; /* Un rosa pálido ultra suave para cerrar la tienda */
-    border-top: 1px solid #f2e6e8;
-    font-size: 14px;
-    margin-top: 50px; /* Separa el footer de la sección de las esferas */
-}
-
-.footer-copyright {
-    color: #888888;
-}
-
-.footer-enlaces a {
-    text-decoration: none;
-    color: #666666;
-    margin-left: 20px; /* Separa los tres enlaces entre sí */
-    transition: color 0.3s ease;
-}
-
-/* Efecto interactivo por si la clienta pasa el cursor encima */
-.footer-enlaces a:hover {
-    color: #47082a; /* Tu color uva característico */
-}
-
-
 /* --- FOTOS DE OJOS --- */
 .foto-producto-placeholder.ojos-0 { background-image: url('ojos/ojos1.jpg'); }
 .foto-producto-placeholder.ojos-1 { background-image: url('ojos/ojos2.jpg'); }
@@ -352,8 +323,232 @@ button:hover {
 .foto-producto-placeholder.rostro-22 { background-image: url('rostro/rostro7.jpeg'); }
 .foto-producto-placeholder.rostro-23 { background-image: url('rostro/rostro8.jpg'); }
 
-/* Regra general para que todas las fotos se adapten perfecto al cuadro */
+
 .foto-producto-placeholder {
     background-size: cover;
     background-position: center;
+}
+
+.pie-pagina {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 30px 80px;
+    background-color: #faf5f6;
+    border-top: 1px solid #f2e6e8;
+    font-size: 14px;
+    margin-top: 50px; 
+    clear:both;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-copyright {
+    color: #888888;
+}
+
+.footer-enlaces a {
+    text-decoration: none;
+    color: #666666;
+    margin-left: 20px; 
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+    color: #47082a; 
+}
+
+/* estilo carrito.html */
+
+.seccion-carrito {
+    padding: 40px 80px;
+    background-color: #ffffff;
+    min-height: 60vh;
+}
+
+.subtitulo-carrito {
+    color: #888888;
+    font-size: 16px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.contenedor-flexible-carrito {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+.productos-carrito-lista {
+    width: 65%;
+}
+
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-carrito th {
+    padding: 15px;
+    border-bottom: 2px solid #29032e;
+    color: #29032e;
+    font-size: 18px;
+}
+
+.tabla-carrito td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 16px;
+    color: #333333;
+}
+
+
+.btn-eliminar-item {
+    background-color: transparent;
+    color: #cc0000;
+    border: 1px solid #cc0000;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.btn-eliminar-item:hover {
+    background-color: #fff0f0;
+    transform: none;
+    box-shadow: none;
+}
+
+.resumen-pago-tarjeta {
+    width: 30%;
+    background-color: #ffffff;
+    border: 1px solid #f2f2f2;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.resumen-pago-tarjeta h3 {
+    margin-top: 0;
+    color: #29032e;
+    font-size: 22px;
+}
+
+.fila-resumen {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.envio-gratis {
+    color: #47082a;
+    font-weight: bold;
+}
+
+.total-destacado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #29032e;
+    margin-top: 20px;
+}
+
+
+.btn-comprar-total {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
+}
+
+.btn-vaciar {
+    width: 100%;
+    background-color: #ffffff;
+    color: #666666;
+    border: 1px solid #cccccc;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.btn-vaciar:hover {
+    background-color: #f5f5f5;
+    color: #000000;
+    box-shadow: none;
+    transform: none;
+}
+
+/* página de datos */
+.contenedor-formulario {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    min-height: 55vh;
+}
+
+.tarjeta-formulario {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    border: 1px solid #f2f2f2;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+    text-align: left;
+}
+
+.tarjeta-formulario h2 {
+    color: #29032e;
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.subtitulo-formulario {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #47082a;
+}
+
+.grupo-input input {
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: #47082a;
+}
+
+.botones-formulario {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.botones-formulario button {
+    flex: 1;
 }
