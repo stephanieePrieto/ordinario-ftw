@@ -2,26 +2,72 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Glow Tech - Bolsa de Compras</title>
+    <title>Beauty Lab - Mi Carrito</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <h1>Bolsa de Compras</h1>
-    <p>Revisa los prodcutos que has seleccionado:</p>
+    <header class="barra-navegacion">
+        <div class="logo">Beauty Lab</div>
+        <nav class="menu-enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html" class="activo">Mi carrito</a>
+            <a href="soporte.html">Soporte</a>
+        </nav>
+    </header>
 
-    <div style="border: 2px dashed purple; padding: 15px; width: 350px;">
-        <ul>
-            <li class="item-carrito" data-costo="180">Labial Matte Velvet - $180</li>
-            <li class=""item-carrito" data-costo="350">Sombra de Sombras Neón- $350</li>
-        </ul>
+    <main class="seccion-carrito">
+        <h2>Tu Bolsa de Compras</h2>
+        <p class="subtitulo-carrito">Revisa los cosméticos seleccionados antes de proceder al pago de alta gama.</p>
 
-        <hr>
-        <h3>Total a Pagar: $<span id="gran-total">0</span></h3>
-    </div>
+        <div class="contenedor-flexible-carrito">
+            <div class="productos-carrito-lista">
+                <table class="tabla-carrito">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="items-carrito">
+                        </tbody>
+                </table>
+            </div>
 
-    <br>
-    <button id=""btn-seguir-comprando">Seguir Comprando</button>
-    <button id="btn-finalizar-compra">Proceder al Registro</button>
+            <div class="resumen-pago-tarjeta">
+                <h3>Resumen de Pedido</h3>
+                <hr>
+                <div class="fila-resumen">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-cuenta">$0.00</span>
+                </div>
+                <div class="fila-resumen">
+                    <span>Envío:</span>
+                    <span class="envio-gratis">¡Gratis!</span>
+                </div>
+                <hr>
+                <div class="fila-resumen total-destacado">
+                    <span>Total:</span>
+                    <span id="total-cuenta">$0.00</span>
+                </div>
+                <button id="btn-proceder-pago" class="btn-comprar-total">Proceder al Pago </button>
+                <button id="btn-vaciar-carrito" class="btn-vaciar">Vaciar Bolsa</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-copyright">
+            &copy; 2026 Beauty Lab. Todos los derechos reservados.
+        </div>
+        <div class="footer-enlaces">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
 
     <script src="carrito.js"></script>
 </body>
