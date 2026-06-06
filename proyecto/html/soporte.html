@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lab - Centro de Soporte</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    
+    <header class="barra-navegacion">
+        <div class="logo">Beauty Lab</div>
+        <nav class="menu-enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html">Mi carrito</a>
+            <a href="soporte.html" class="activo">Soporte</a>
+        </nav>
+    </header>
+
+    <main class="seccion-carrito">
+        <h2>Centro de Soporte y Ayuda</h2>
+        <p class="subtitulo-carrito">¿Tienes alguna duda con tus cosméticos o un problema con tu entrega? Escríbenos:</p>
+
+        <div class="contenedor-flexible-carrito">
+            
+            <div class="productos-carrito-lista" style="background: #ffffff; border: 1px solid #f2f2f2; padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                <div class="grupo-input">
+                    <label for="soporte-nombre">Nombre del Cliente:</label>
+                    <input type="text" id="soporte-nombre" placeholder="Tu nombre">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="soporte-pedido">Número de pedido:</label>
+                    <input type="text" id="soporte-pedido" placeholder="Ej. BL-9843">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="soporte-mensaje">Descripción del problema:</label>
+                    <textarea id="soporte-mensaje" rows="5" style="padding: 12px 15px; border: 1px solid #cccccc; border-radius: 10px; font-size: 16px; font-family: inherit; resize: none;" placeholder="Escribe aquí los detalles..."></textarea>
+                </div>
+
+                <div style="display: flex; gap: 15px; margin-top: 20px;">
+                    <button id="btn-inicio" class="btn-vaciar" style="margin-top: 0;">Volver al Inicio</button>
+                    <button id="btn-enviar-reporte" class="btn-comprar-total" style="margin-top: 0; flex: 1;">Enviar Reporte</button>
+                </div>
+            </div>
+
+            <div class="resumen-pago-tarjeta" style="width: 35%;">
+                <h3>Tus Reportes Enviados</h3>
+                <hr style="border: 0; border-top: 1px solid #f2f2f2; margin-bottom: 20px;">
+                <div id="historial-tickets">
+                    <p style="color: gray; text-align: center; padding: 20px;">No has enviado ningún reporte en esta sesión.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-copyright">
+            &copy; 2026 Beauty Lab. Todos los derechos reservados.
+        </div>
+        <div class="footer-enlaces">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="../javascript/soporte.js"></script>
+</body>
+</html>

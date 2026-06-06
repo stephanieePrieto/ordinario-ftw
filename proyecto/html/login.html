@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lab - Pago</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    
+    <header class="barra-navegacion">
+        <div class="logo">Beauty Lab</div>
+        <nav class="menu-enlaces">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html">Mi carrito</a>
+            <a href="soporte.html">Soporte</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-formulario">
+        <div class="tarjeta-formulario">
+            <h2>Método de Pago</h2>
+            <p class="subtitulo-formulario">Selecciona cómo deseas liquidar tu pedido de cosméticos:</p>
+
+            <div class="grupo-input">
+                <label for="metodo-seleccionado">Selecciona tu método:</label>
+                <select id="metodo-seleccionado" style="padding: 12px; border-radius: 10px; border: 1px solid #cccccc; font-size: 16px;">
+                    <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                    <option value="efectivo">Pago en Efectivo</option>
+                </select>
+            </div>
+
+            <div class="grupo-input">
+                <label for="campo-tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="campo-tarjeta" placeholder="1234 5678 1234 5678">
+            </div>
+
+            <div class="grupo-input">
+                <label for="campo-cvv">Código de Seguridad (CVV):</label>
+                <input type="password" id="campo-cvv" placeholder="123" maxlength="3" style="width: 80px;">
+            </div>
+
+            <div class="botones-formulario">
+                <button id="btn-regresar-datos" class="btn-secundario">Regresar a Mis Datos</button>
+                <button id="btn-confirmar-pago" class="btn-comprar-total" style="margin-top:0;">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-copyright">
+            &copy; 2026 Beauty Lab. Todos los derechos reservados.
+        </div>
+        <div class="footer-enlaces">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+    
+    <script src="../javascript/pago.js"></script>
+</body>
+</html>

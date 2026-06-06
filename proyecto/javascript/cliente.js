@@ -8,7 +8,7 @@ function cargarInventario(){
         mostrarProductos(xmlDoc);
     };
 
-    xhttp.open("GET", "inventario.xml");
+    xhttp.open("GET", "../xml/inventario.xml");
     xhttp.send();
 }
 
@@ -37,7 +37,7 @@ function mostrarProductos(xml){
                         <p class="precio-producto">$${precio}</p>
                         
                         <div class="botones-tarjeta">
-                            <button class="btn-ver-mas" onclick="window.location.href='detalle.html'">Ver más</button>
+                            <button class="btn-ver-mas" onclick="window.location.href='detalle.html?id=${i}'">Ver más</button>
                             <button class="btn-agregar" data-precio="${precio}">Agregar</button>
                         </div>
                     </div>

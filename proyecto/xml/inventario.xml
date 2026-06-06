@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario>
+    <producto>
+        <nombre>Paleta Oro Rosa</nombre>
+        <precio>540.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Elegante selección de 12 tonos cálidos y metalizados. Su fórmula ultra pigmentada se difumina con suavidad para crear looks de noche sofisticados con destellos oro rosa de alta gama.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Máscara Volume Noir</nombre>
+        <precio>220.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Consigue un volumen dramático y una longitud extrema en una sola pasada. Color negro intenso de larga duración, resistente al agua y enriquecido con aceites naturales para proteger tus pestañas.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Delineador Précis</nombre>
+        <precio>180.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Delineador líquido con punta de alta precisión para un trazo firme, limpio y continuo. Fórmula de secado rápido con acabado mate profundo que resiste intacto todo el día sin correrse.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Paleta Nudes Céleste</nombre>
+        <precio>610.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>La colección definitiva de tonos neutros esenciales. Combina mates aterciopelados y sutiles satinados celestiales ideales para esculpir la mirada con un acabado natural y elegante de diario.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Sombras Glitter Glow</nombre>
+        <precio>260.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Sombras líquidas cargadas de reflejos multidimensionales. Su textura ligera se adhiere al párpado al instante sin dejar residuos sueltos, garantizando un brillo eléctrico tridimensional de impacto.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Gel de Cejas Definido</nombre>
+        <precio>190.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Fija, rellena y define tus cejas con un acabado natural de larga duración. Su mini cepillo distribuye el gel de manera uniforme, esculpiendo cada vello sin dejar texturas rígidas.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Pestañas Postizas Luxe</nombre>
+        <precio>140.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Pestañas de fibra premium hechas a mano para integrarse de forma invisible con tus pestañas naturales. Añaden densidad, volumen y un efecto almendrado de alta costura a la mirada.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Primer de Ojos Silk</nombre>
+        <precio>230.00</precio>
+        <categoria>Ojos</categoria>
+        <descripcion>Base suavizante que prolonga la duración de tus sombras e intensifica su color real. Crea un lienzo sedoso en el párpado, evitando que los pliegues o el sudor arruinen tu maquillaje.</descripcion>
+    </producto>
+
+    <producto>
+        <nombre>Labial Velvet Rouge</nombre>
+        <precio>280.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Labial líquido con textura de mousse que envuelve los labios en un color rojo icónico. Acabado mate aterciopelado que hidrata profundamente y no transfiere durante el día.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Lip Gloss Cristal</nombre>
+        <precio>180.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Brillo de labios de alta definición con efecto espejo cristalino. Su fórmula no pegajosa enriquecida con vitamina E aporta volumen visual inmediato y una hidratación exquisita.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Delineador Matte Lip</nombre>
+        <precio>150.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Lápiz de labios cremosa que define el contorno con absoluta suavidad. Ideal para prolongar la vida de tu labial o rellenar por completo los labios con un fondo mate aterciopelado sofisticado.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Tinta de Labios Rosé</nombre>
+        <precio>200.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Fórmula acuosa translúcida que pigmenta los labios con un romántico tono rosado natural. Efecto de labios mordidos de larga duración que se siente completamente ligero, como si no llevaras nada.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Bálsamo Hidratante Coco</nombre>
+        <precio>120.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Tratamiento intensivo diario para labios resecos. Formulado con manteca de coco pura y aceites esenciales, repara las comisuras del labio y devuelve la suavidad sedosa al instante.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Labial Liquid Satin</nombre>
+        <precio>250.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>El equilibrio perfecto entre color intenso y brillo satinado elegante. Su aplicador de alta gama distribuye una capa cremosa y confortable que resalta la jugosidad natural de los labios.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Exfoliante Berry Sweet</nombre>
+        <precio>160.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Microcristales de azúcar natural con un delicioso aroma a frutos del bosque. Remueve suavemente las células muertas y pellejitos, preparando los labios para una aplicación de labial perfecta.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Aceite de Labios Glow</nombre>
+        <precio>210.00</precio>
+        <categoria>Labios</categoria>
+        <descripcion>Aceite nutritivo con un sutil toque de color adaptable al pH de tus labios. Proporciona el brillo de un gloss y el cuidado profundo de un bálsamo protector sin dejar sensación grasosa.</descripcion>
+    </producto>
+
+    <producto>
+        <nombre>Base Luminosa Glow</nombre>
+        <precio>420.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Base de maquillaje fluida con acabado sedoso y radiante. Ofrece una cobertura construible de media a alta mientras unifica el tono e hidrata tu piel con infusión de ácido hialurónico.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Blush Pétale</nombre>
+        <precio>320.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Rubor en polvo compacto ultra fino con pigmentos minerales que se funden de inmediato en la piel. Aporta un saludable rubor rosado natural a las mejillas con un sutil velo de luz satinada.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Contorno Sculpt</nombre>
+        <precio>380.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Polvo de contorneo mate con subtono frío diseñado para crear sombras sutiles y esculpir las facciones del rostro (pómulos, nariz y mandíbula) con máxima naturalidad y difuminado impecable.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Iluminador Diamond</nombre>
+        <precio>290.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Polvo iluminador con destellos ultra finos de polvo de diamante. Captura y refleja la luz en los puntos altos del rostro (pómulos y arco de cupido) logrando un brillo húmedo tridimensional lujoso.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Corrector Perfect Silk</nombre>
+        <precio>240.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Corrector líquido de alta cobertura y acabado tipo seda. Camufla ojeras, imperfecciones y líneas de expresión al instante sin agrietarse ni acumularse en los pliegues de la piel del ojo.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Polvo Traslúcido Matte</nombre>
+        <precio>350.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Polvo suelto mineral ultra ligero que sella el maquillaje por completo. Controla los brillos faciales molestos y minimiza ópticamente la apariencia de poros abiertos dejando un acabado de porcelana suave.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Fijador de Maquillaje</nombre>
+        <precio>270.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Bruma fijadora ultra fina que funde las capas de maquillaje para un acabado profesional integrado. Protege tu look contra el calor, el sudor y los roces, extendiendo su duración por más de 16 horas.</descripcion>
+    </producto>
+    <producto>
+        <nombre>Primer Hidratante Base</nombre>
+        <precio>310.00</precio>
+        <categoria>Rostro</categoria>
+        <descripcion>Prebase hidratante cremosa que acondiciona la piel sedosamente antes del maquillaje. Rellena líneas finas y crea una barrera protectora que evita que la base sea absorbida u oxidada por los poros.</descripcion>
+    </producto>
+</inventario>

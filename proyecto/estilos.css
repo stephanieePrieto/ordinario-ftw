@@ -155,16 +155,16 @@ button:hover {
 
 
 .esfera-ojos {
-    background-image: url('ojos/ojos.jpeg');
+    background-image: url('../proyecto/imagenes/ojos/ojos.jpeg');
 }
 
 .esfera-labios {
-    background-image: url('labios/labios.jpeg');
+    background-image: url('../proyecto/imagenes/labios/labios.jpeg');
     background-position: center 30%;
 }
 
 .esfera-rostro {
-    background-image: url('rostro/rostro.jpeg');
+    background-image: url('../proyecto/imagenes/rostro/rostro.jpeg');
 }
 
 
@@ -294,34 +294,34 @@ button:hover {
     box-shadow: none;
 }
 /* --- FOTOS DE OJOS --- */
-.foto-producto-placeholder.ojos-0 { background-image: url('ojos/ojos1.jpg'); }
-.foto-producto-placeholder.ojos-1 { background-image: url('ojos/ojos2.jpg'); }
-.foto-producto-placeholder.ojos-2 { background-image: url('ojos/ojos3.jpeg'); }
-.foto-producto-placeholder.ojos-3 { background-image: url('ojos/ojos4.webp'); }
-.foto-producto-placeholder.ojos-4 { background-image: url('ojos/ojos5.webp'); }
-.foto-producto-placeholder.ojos-5 { background-image: url('ojos/ojos6.jpeg'); }
-.foto-producto-placeholder.ojos-6 { background-image: url('ojos/ojos7.avif'); }
-.foto-producto-placeholder.ojos-7 { background-image: url('ojos/ojos8.png'); }
+.foto-producto-placeholder.ojos-0 { background-image: url('imagenes/ojos/ojos1.jpg'); }
+.foto-producto-placeholder.ojos-1 { background-image: url('imagenes/ojos/ojos2.jpg'); }
+.foto-producto-placeholder.ojos-2 { background-image: url('imagenes/ojos/ojos3.jpeg'); }
+.foto-producto-placeholder.ojos-3 { background-image: url('imagenes/ojos/ojos4.webp'); }
+.foto-producto-placeholder.ojos-4 { background-image: url('imagenes/ojos/ojos5.webp'); }
+.foto-producto-placeholder.ojos-5 { background-image: url('imagenes/ojos/ojos6.jpeg'); }
+.foto-producto-placeholder.ojos-6 { background-image: url('imagenes/ojos/ojos7.avif'); }
+.foto-producto-placeholder.ojos-7 { background-image: url('imagenes/ojos/ojos8.png'); }
 
 /* --- FOTOS DE LABIOS --- */
-.foto-producto-placeholder.labios-8 { background-image: url('labios/labios1.jpg'); }
-.foto-producto-placeholder.labios-9 { background-image: url('labios/labios2.jpg'); }
-.foto-producto-placeholder.labios-10 { background-image: url('labios/labios3.avif'); }
-.foto-producto-placeholder.labios-11 { background-image: url('labios/labios4.jpg'); }
-.foto-producto-placeholder.labios-12 { background-image: url('labios/labios5.webp'); }
-.foto-producto-placeholder.labios-13 { background-image: url('labios/labios6.webp'); }
-.foto-producto-placeholder.labios-14 { background-image: url('labios/labios7.jpeg'); }
-.foto-producto-placeholder.labios-15 { background-image: url('labios/labios8.webp'); }
+.foto-producto-placeholder.labios-8 { background-image: url('imagenes/labios/labios1.jpg'); }
+.foto-producto-placeholder.labios-9 { background-image: url('imagenes/labios/labios2.jpg'); }
+.foto-producto-placeholder.labios-10 { background-image: url('imagenes/labios/labios3.avif'); }
+.foto-producto-placeholder.labios-11 { background-image: url('imagenes/labios/labios4.jpg'); }
+.foto-producto-placeholder.labios-12 { background-image: url('imagenes/labios/labios5.webp'); }
+.foto-producto-placeholder.labios-13 { background-image: url('imagenes/labios/labios6.webp'); }
+.foto-producto-placeholder.labios-14 { background-image: url('imagenes/labios/labios7.jpeg'); }
+.foto-producto-placeholder.labios-15 { background-image: url('imagenes/labios/labios8.webp'); }
 
 /* --- FOTOS DE ROSTRO --- */
-.foto-producto-placeholder.rostro-16 { background-image: url('rostro/rostro1.png'); }
-.foto-producto-placeholder.rostro-17 { background-image: url('rostro/rostro2.png'); }
-.foto-producto-placeholder.rostro-18 { background-image: url('rostro/rostro3.jpg'); }
-.foto-producto-placeholder.rostro-19 { background-image: url('rostro/rostro4.jpeg'); }
-.foto-producto-placeholder.rostro-20 { background-image: url('rostro/rostro5.png'); }
-.foto-producto-placeholder.rostro-21 { background-image: url('rostro/rostro6.webp'); }
-.foto-producto-placeholder.rostro-22 { background-image: url('rostro/rostro7.jpeg'); }
-.foto-producto-placeholder.rostro-23 { background-image: url('rostro/rostro8.jpg'); }
+.foto-producto-placeholder.rostro-16 { background-image: url('imagenes/rostro/rostro1.png'); }
+.foto-producto-placeholder.rostro-17 { background-image: url('imagenes/rostro/rostro2.png'); }
+.foto-producto-placeholder.rostro-18 { background-image: url('imagenes/rostro/rostro3.jpg'); }
+.foto-producto-placeholder.rostro-19 { background-image: url('imagenes/rostro/rostro4.jpeg'); }
+.foto-producto-placeholder.rostro-20 { background-image: url('imagenes/rostro/rostro5.png'); }
+.foto-producto-placeholder.rostro-21 { background-image: url('imagenes/rostro/rostro6.webp'); }
+.foto-producto-placeholder.rostro-22 { background-image: url('imagenes/rostro/rostro7.jpeg'); }
+.foto-producto-placeholder.rostro-23 { background-image: url('imagenes/rostro/rostro8.jpg'); }
 
 
 .foto-producto-placeholder {
