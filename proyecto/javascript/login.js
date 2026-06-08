@@ -26,7 +26,6 @@ function validarAcceso(event) {
         if (accesoConcedido) {
             alert("¡Bienvenida de nuevo a Beauty Lab!");
             
-            // Pasamos los datos del artículo de la URL original directo a la pantalla de datos
             const parametros = new URLSearchParams(window.location.search);
             const nombreUrl = parametros.get("nombre") || "Máscara Volume Noir - Ojos";
             const precioUrl = parametros.get("precio") || "220.00";
