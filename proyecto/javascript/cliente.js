@@ -21,13 +21,12 @@ function mostrarProductos(xml){
         let nombre = listaProductos[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
         let precio = listaProductos[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
         let categoria = listaProductos[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
-
-        let claseFotoUnica = category = categoria.toLowerCase() + "-" + i;
+        let claseFotoUnica = categoria.toLowerCase() + "-" + i;
 
         if (categoriaSeleccionada === null || categoria === categoriaSeleccionada) {
             tarjetasHTML += `
                 <div class="tarjeta-producto">
-                    <div class="foto-producto-placeholder ${claseFotoUnica}"></div>
+                    <div class="foto-producto-placeholder ${claseFotoUnica}" role="img" aria-label="Vista previa del producto: ${nombre}"></div>
                     <div class="info-producto">
                         <span class="tag-categoria">${categoria}</span>
                         <h3 class="titulo-producto">${nombre}</h3>
@@ -54,7 +53,10 @@ contenedor.addEventListener("click", function(evento) {
 
         alert("¡Perfecto! El producto " + nombreProducto + " se ha añadido a tu bolsa.");
         
-        // PASO DE DATOS POR URL: Mandamos el nombre y precio codificados a la siguiente página
-        window.location.href = "carrito.html?nombre=" + encodeURIComponent(nombreProducto) + "&precio=" + precioProducto;
+
+        window.location.href = "carrito.html?nombre1=" + encodeURIComponent(nombreProducto) + 
+                               "&precio1=" + precioProducto +
+                               "&nombre2=" + encodeURIComponent("Labial Velvet Rouge - Labios") + 
+                               "&precio2=260.00";
     }
 });

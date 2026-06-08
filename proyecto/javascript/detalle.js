@@ -1,7 +1,8 @@
 const textoNombre = document.getElementById("detalle-nombre");
-const textoDescripcion = document.getElementById("detalle-categoria");
+const textoCategoria = document.getElementById("detalle-categoria");
 const textoPrecio = document.getElementById("detalle-precio");
-const fotoPlaceholder = document.querySelector(".foto-detalle-vista");
+const textoDescripcion = document.getElementById("detalle-descripcion");
+const fotoPlaceholder = document.getElementById("detalle-foto");
 const botonVolver = document.getElementById("btn-volver");
 const botonAgregar = document.getElementById("btn-agregar-detalle");
 
@@ -27,16 +28,19 @@ function cargarDetalleProducto() {
             let categoria = nodoProducto.getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
             let descripcionXml = nodoProducto.getElementsByTagName("descripcion")[0].childNodes[0].nodeValue;
 
-            textoNombre.innerText = nombre;
-            textoDescripcion.innerText = categoria.toUpperCase();
-            textoPrecio.innerText = parseFloat(precio).toFixed(2);
-            document.querySelector(".descripcion-detalle-texto").innerText = descripcionXml;
-
+            // 1. Guardamos INMEDIATAMENTE los datos en el objeto para asegurar el carrito
             productoActual.nombre = nombre;
             productoActual.precio = parseFloat(precio);
 
-            let claseFoto = categoria.toLowerCase() + "-" + productoId;
+            // 2. Pintamos los elementos del DOM usando sus IDs limpios
+            if (textoNombre) textoNombre.innerText = nombre;
+            if (textoCategoria) textoCategoria.innerText = categoria.toUpperCase();
+            if (textoPrecio) textoPrecio.innerText = parseFloat(precio).toFixed(2);
+            if (textoDescripcion) textoDescripcion.innerText = descripcionXml;
+
+            // 3. Manejo controlado de la foto
             if (fotoPlaceholder) {
+                let claseFoto = categoria.toLowerCase() + "-" + productoId;
                 fotoPlaceholder.className = "foto-detalle-vista " + claseFoto;
             }
         }
@@ -51,8 +55,18 @@ function regresarAlCatalogo() {
 }
 
 function agregarBolsa() {
-    alert("¡Excelente elección! El producto " + productoActual.nombre + " ha sido añadido a tu bolsa de compras.");
-    window.location.href = "catalogo.html";
+    if (!productoActual.nombre) {
+        alert("Espera a que termine de cargar el producto por favor.");
+        return;
+    }
+    
+    alert("¡Excelente elección! " + productoActual.nombre + " ha sido añadido a tu bolsa de compras.");
+    
+    // Mandamos las variables correctas que tu carrito.js está esperando escuchar
+    window.location.href = "carrito.html?nombre1=" + encodeURIComponent(productoActual.nombre) + 
+                           "&precio1=" + productoActual.precio + 
+                           "&nombre2=" + encodeURIComponent("Labial Velvet Rouge - Labios") + 
+                           "&precio2=260.00";
 }
 
 botonVolver.addEventListener("click", regresarAlCatalogo);
