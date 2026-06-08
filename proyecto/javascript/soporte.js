@@ -27,7 +27,6 @@ function registrarReporte(){
     }
 
     acumuladorTickets = acumuladorTickets + nuevoTicketHTML;
-
     contenedorHistorial.innerHTML = acumuladorTickets;
 
     document.getElementById("soporte-nombre").value = "";
@@ -38,7 +37,7 @@ function registrarReporte(){
 }
 
 function irAlInicio(){
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
 btnEnviar.addEventListener("click", registrarReporte);

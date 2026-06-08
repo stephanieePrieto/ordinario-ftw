@@ -2,13 +2,11 @@ const contenedor = document.getElementById("contenedor-tarjetas");
 
 function cargarInventario(){
     const xhttp = new XMLHttpRequest();
-
     xhttp.onload = function(){
         const xmlDoc = xhttp.responseXML;
         mostrarProductos(xmlDoc);
     };
-
-    xhttp.open("GET", "../xml/inventario.xml");
+    xhttp.open("GET", "../xml/inventario.xml", true);
     xhttp.send();
 }
 
@@ -17,25 +15,23 @@ function mostrarProductos(xml){
     const categoriaSeleccionada = parametros.get("categoria");
     const listaProductos = xml.getElementsByTagName("producto");
 
-    let tarjetasHTML  = "";
+    let tarjetasHTML = "";
 
     for(let i = 0; i < listaProductos.length; i++){
         let nombre = listaProductos[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
         let precio = listaProductos[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue;
-        let descripcion = listaProductos[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
+        let categoria = listaProductos[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
 
-        let claseFotoUnica = descripcion.toLowerCase() + "-" + i;
+        let claseFotoUnica = category = categoria.toLowerCase() + "-" + i;
 
-        if (categoriaSeleccionada === null || descripcion === categoriaSeleccionada) {
+        if (categoriaSeleccionada === null || categoria === categoriaSeleccionada) {
             tarjetasHTML += `
                 <div class="tarjeta-producto">
                     <div class="foto-producto-placeholder ${claseFotoUnica}"></div>
-                    
                     <div class="info-producto">
-                        <span class="tag-categoria">${descripcion}</span>
+                        <span class="tag-categoria">${categoria}</span>
                         <h3 class="titulo-producto">${nombre}</h3>
-                        <p class="precio-producto">$${precio}</p>
-                        
+                        <p class="precio-producto">$${parseFloat(precio).toFixed(2)}</p>
                         <div class="botones-tarjeta">
                             <button class="btn-ver-mas" onclick="window.location.href='detalle.html?id=${i}'">Ver más</button>
                             <button class="btn-agregar" data-precio="${precio}">Agregar</button>
@@ -50,26 +46,15 @@ function mostrarProductos(xml){
 
 cargarInventario();
 
-// Bolsa de compras interactiva
 contenedor.addEventListener("click", function(evento) {
     if (evento.target.classList.contains("btn-agregar")){
         const tarjeta = evento.target.closest(".tarjeta-producto");
-
         const nombreProducto = tarjeta.querySelector(".titulo-producto").innerText;
-        const precioProducto = parseFloat(evento.target.getAttribute("data-precio"));
-
-        const productosSeleccionado = {
-            nombre: nombreProducto,
-            precio: precioProducto
-        };
-
-      
-        let carritoActual = JSON.parse(localStorage.getItem("carrito_beauty_lab")) || [];
-
-        carritoActual.push(productosSeleccionado);
-        localStorage.setItem("carrito_beauty_lab", JSON.stringify(carritoActual));
-
+        const precioProducto = evento.target.getAttribute("data-precio");
 
         alert("¡Perfecto! El producto " + nombreProducto + " se ha añadido a tu bolsa.");
+        
+        // PASO DE DATOS POR URL: Mandamos el nombre y precio codificados a la siguiente página
+        window.location.href = "carrito.html?nombre=" + encodeURIComponent(nombreProducto) + "&precio=" + precioProducto;
     }
 });

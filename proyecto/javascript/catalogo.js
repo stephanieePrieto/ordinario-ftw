@@ -1,9 +1,10 @@
+
 const btnOjos = document.getElementById("btn-ojos");
 const btnLabios = document.getElementById("btn-labios");
 const btnRostro = document.getElementById("btn-rostro");
 
+
 function filtrarOjos() {
-    // CORRECCIÓN: Quita "html/" porque index y catalogo están en la misma carpeta
     window.location.href = "catalogo.html?categoria=Ojos";
 }
 

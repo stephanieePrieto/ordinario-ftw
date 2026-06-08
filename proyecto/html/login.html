@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Lab - Pago</title>
+    <title>Beauty Lab - Iniciar Sesión</title>
     <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
-    
     <header class="barra-navegacion">
         <div class="logo">Beauty Lab</div>
         <nav class="menu-enlaces">
+            <a href="login.html" class="activo">Login</a>
             <a href="index.html">Inicio</a>
             <a href="catalogo.html">Catálogo</a>
             <a href="carrito.html">Mi carrito</a>
@@ -20,31 +20,30 @@
 
     <main class="contenedor-formulario">
         <div class="tarjeta-formulario">
-            <h2>Método de Pago</h2>
-            <p class="subtitulo-formulario">Selecciona cómo deseas liquidar tu pedido de cosméticos:</p>
-
-            <div class="grupo-input">
-                <label for="metodo-seleccionado">Selecciona tu método:</label>
-                <select id="metodo-seleccionado" style="padding: 12px; border-radius: 10px; border: 1px solid #cccccc; font-size: 16px;">
-                    <option value="tarjeta">Tarjeta de Crédito / Débito</option>
-                    <option value="efectivo">Pago en Efectivo</option>
-                </select>
-            </div>
-
-            <div class="grupo-input">
-                <label for="campo-tarjeta">Número de Tarjeta:</label>
-                <input type="text" id="campo-tarjeta" placeholder="1234 5678 1234 5678">
-            </div>
-
-            <div class="grupo-input">
-                <label for="campo-cvv">Código de Seguridad (CVV):</label>
-                <input type="password" id="campo-cvv" placeholder="123" maxlength="3" style="width: 80px;">
-            </div>
-
-            <div class="botones-formulario">
-                <button id="btn-regresar-datos" class="btn-secundario">Regresar a Mis Datos</button>
-                <button id="btn-confirmar-pago" class="btn-comprar-total" style="margin-top:0;">Finalizar Compra</button>
-            </div>
+            <h2>Acceso a Clientes</h2>
+            <p class="subtitulo-formulario">Inicia sesión con tu cuenta de Beauty Lab para continuar con tu proceso de compra.</p>
+            <form id="formulario-login">
+                <div class="grupo-input">
+                    <label for="usuario-login">Nombre de Usuario</label>
+                    <input type="text" id="usuario-login" placeholder="Ej. steph_prieto" required>
+                </div>
+                <div class="grupo-input">
+                    <label for="password-login">Contraseña</label>
+                    <input type="password" id="password-login" placeholder="••••••••" required>
+                </div>
+                <div style="margin-top: 15px; text-align: center; font-size: 14px;">
+                    <p style="color: #666666; margin: 0;">
+                        ¿Eres un cliente nuevo? 
+                        <a href="#" onclick="alert('¡Simulación de Registro!\n\nPara fines de evaluación de este proyecto ordinario, los accesos se validan directamente contra el archivo xml/usuarios.xml.\n\nPuedes iniciar sesión de prueba con las siguientes credenciales registrada:\n\nUsuario: steph_prieto\nContraseña: uv2026'); return false;" style="color: var(--color-uva-medio); font-weight: bold; text-decoration: underline;">
+                            Regístrate aquí
+                        </a>
+                    </p>
+                </div>
+                <div class="botones-formulario" style="margin-top: 30px;">
+                    <button type="button" id="btn-cancelar-login" class="btn-secundario" style="flex: 1;">Volver al Carrito</button>
+                    <button type="submit" id="btn-agregar-detalle" style="flex: 2;">Iniciar Sesión</button>
+                </div>
+            </form>
         </div>
     </main>
 
@@ -55,10 +54,10 @@
         <div class="footer-enlaces">
             <a href="#">Privacidad</a>
             <a href="#">Términos</a>
-            <a href="#">Contacto</a>
+            <a href="acerca.html">Acerca del Proyecto</a>
         </div>
     </footer>
-    
-    <script src="../javascript/pago.js"></script>
+
+    <script src="../javascript/login.js"></script>
 </body>
 </html>

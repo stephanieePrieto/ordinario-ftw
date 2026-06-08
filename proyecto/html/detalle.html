@@ -2,14 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty Lab - Detalle del Producto</title>
     <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
-
     <header class="barra-navegacion">
         <div class="logo">Beauty Lab</div>
         <nav class="menu-enlaces">
+            <a href="login.html">Login</a>
             <a href="index.html">Inicio</a>
             <a href="catalogo.html" class="activo">Catálogo</a>
             <a href="carrito.html">Mi carrito</a>
@@ -19,23 +20,20 @@
 
     <main class="contenedor-detalle-producto">
         <div class="columna-foto-detalle">
-            <div class="foto-detalle-placeholder"></div>
+            <div class="foto-principal-contenedor">
+                <div class="foto-detalle-vista"></div> 
+            </div>
         </div>
-
         <div class="columna-info-detalle">
-            <span class="categoria-detalle-tag" id="detalle-categoria">Categoría</span>
+            <div class="fila-tag-resenas">
+                <span class="categoria-detalle-tag" id="detalle-categoria">Categoría</span>
+            </div>
             <h1 id="detalle-nombre">Nombre del Producto</h1>
             <p class="precio-detalle-tag">$<span id="detalle-precio">0.00</span></p>
-
-            <p class="descripcion-detalle-texto">
-                Este producto está formulado con los más altos estándares de calidad para resaltar tu brillo natural. 
-                Textura ultra sedosa y acabado de larga duración para una experiencia boutique única.
-            </p>
-
+            <p class="descripcion-detalle-texto">Cargando descripción...</p>
             <hr class="separador-detalle">
-
             <div class="acciones-detalle">
-                <button id="btn-volver" class="btn-secundario">Volver al Catálogo</button>
+                <button id="btn-volver">Volver al Catálogo</button>
                 <button id="btn-agregar-detalle">Añadir a mi Bolsa</button>
             </div>
         </div>
@@ -48,7 +46,7 @@
         <div class="footer-enlaces">
             <a href="#">Privacidad</a>
             <a href="#">Términos</a>
-            <a href="#">Contacto</a>
+            <a href="acerca.html">Acerca del Proyecto</a>
         </div>
     </footer>
 

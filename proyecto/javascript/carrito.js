@@ -1,32 +1,44 @@
-
 const tablaCuerpo = document.getElementById("items-carrito");
-
 const btnSeguir = document.getElementById("btn-seguir-comprando");
 const btnProceder = document.getElementById("btn-proceder-datos");
 
+let productosEnBolsa = [];
 
-function regresar(){
-    window.location.href = "catalogo.html";
-}
+function recuperarProductoDeURL() {
+    const parametros = new URLSearchParams(window.location.search);
+    const nombreUrl = parametros.get("nombre");
+    const precioUrl = parametros.get("precio");
 
-function avanzarAFormulario(){
-  
-    let productosEnBolsa = JSON.parse(localStorage.getItem("carrito_beauty_lab")) || [];
-    if (productosEnBolsa.length === 0) {
-        alert("Tu bolsa está vacía. ¡Agrega cosméticos en el catálogo primero!");
+    if (nombreUrl && precioUrl) {
+        productosEnBolsa.push({
+            nombre: nombreUrl,
+            precio: parseFloat(precioUrl)
+        });
     } else {
-        window.location.href = "datos.html";
+        productosEnBolsa.push({
+            nombre: "Máscara Volume Noir - Ojos",
+            precio: 220.00
+        });
     }
 }
 
+function regresar() {
+    window.location.href = "catalogo.html";
+}
 
-function calcularTotalBolsa(){
+function avanzarAFormulario() {
+    if (productosEnBolsa.length === 0) {
+        alert("Tu bolsa está vacía. ¡Agrega cosméticos en el catálogo primero!");
+        return;
+    }
+    let item = productosEnBolsa[0];
+    alert("Para procesar tu bolsa de cosméticos, por favor inicia sesión primero.");
+    window.location.href = "login.html?nombre=" + encodeURIComponent(item.nombre) + "&precio=" + item.precio;
+}
 
-    let productosEnBolsa = JSON.parse(localStorage.getItem("carrito_beauty_lab")) || [];
-    
+function calcularTotalBolsa() {
     let HTMLInyectado = "";
     let sumaTotal = 0; 
-
 
     if (productosEnBolsa.length === 0) {
         tablaCuerpo.innerHTML = `
@@ -42,10 +54,7 @@ function calcularTotalBolsa(){
 
     for (let i = 0; i < productosEnBolsa.length; i++) {
         let item = productosEnBolsa[i];
-        
-
         sumaTotal = sumaTotal + parseFloat(item.precio);
-
 
         HTMLInyectado += `
             <tr class="item-carrito">
@@ -59,26 +68,16 @@ function calcularTotalBolsa(){
     }
 
     tablaCuerpo.innerHTML = HTMLInyectado;
-    
-    
     document.getElementById("gran-total").innerText = "Total: $" + sumaTotal.toFixed(2);
 }
 
 window.eliminarProducto = function(indice) {
-    let productosEnBolsa = JSON.parse(localStorage.getItem("carrito_beauty_lab")) || [];
-    
-
     productosEnBolsa.splice(indice, 1);
-
-    localStorage.setItem("carrito_beauty_lab", JSON.stringify(productosEnBolsa));
-    
-
     calcularTotalBolsa();
 };
-
 
 btnSeguir.addEventListener("click", regresar);
 btnProceder.addEventListener("click", avanzarAFormulario);
 
-
+recuperarProductoDeURL();
 calcularTotalBolsa();

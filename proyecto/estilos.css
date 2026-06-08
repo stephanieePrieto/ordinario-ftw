@@ -1,30 +1,125 @@
-/* fondo general de la tienda */
+/*  VARIABLES GLOBALES Y CONFIGURACIÓN BASE */
+:root {
+    --color-uva-oscuro: #29032e;
+    --color-uva-medio: #47082a;
+    --color-terracota: #d4927db7;
+    --color-rosa-suave: #faf5f6;
+    --color-rosa-placeholder: #fbe7eb;
+    --border-light: 1px solid #f2f2f2;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Garamond', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #FFFFFF;
-    color:#333333
+    color: #333333;
 }
 
-/* barra de navegación superior */
+
+/* COMPONENTES REUTILIZABLES*/
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-uva-medio);
+}
+
+.grupo-input input,
+.grupo-input select {
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: var(--color-uva-medio);
+}
+button {
+    background-color: var(--color-terracota);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(72, 11, 31);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #130108;
+    box-shadow: 0 4px 15px rgba(112, 38, 4, 0.963);
+    transform: translateX(10px);
+}
+.btn-ver-mas,
+.btn-secundario,
+.btn-vaciar {
+    background-color: #ffffff;
+    color: var(--color-uva-medio);
+    border: 1px solid var(--color-uva-medio);
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.btn-ver-mas:hover,
+.btn-secundario:hover,
+.btn-vaciar:hover {
+    background-color: var(--color-rosa-placeholder);
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-agregar,
+.btn-comprar-total {
+    background-color: var(--color-terracota);
+    color: white;
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 12px;
+    box-shadow: none;
+    flex: 1;
+}
+
+.btn-agregar:hover,
+.btn-comprar-total:hover {
+    background-color: var(--color-uva-oscuro);
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* ESTRUCTURA GLOBAL (BARRA DE NAVEGACIÓN Y PIE DE PÁGINA) */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
     background-color: #FFFFFF;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: var(--border-light);
 }
 
-.barra-navegacion .logo{
+.barra-navegacion .logo {
     font-size: 32px;
     font-weight: bold;
-    color: #29032e;
+    color: var(--color-uva-oscuro);
 }
 
-.menu-enlaces a{
+.menu-enlaces a {
     text-decoration: none;
     color: #555555;
     margin-left: 30px;
@@ -32,47 +127,64 @@ body {
     font-weight: 500;
 }
 
-
-.menu-enlaces a:hover, .menu-enlaces a.activo {
-    color: #47082a;
+.menu-enlaces a:hover,
+.menu-enlaces a.activo {
+    color: var(--color-uva-medio);
     border-bottom: 2px solid #000000;
     padding-bottom: 4px;
 }
 
-.banner-navegacion{
+.pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+    background-color: var(--color-rosa-suave);
+    border-top: 1px solid #f2e6e8;
+    font-size: 14px;
+    margin-top: 50px;
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-copyright {
+    color: #888888;
+}
+
+.footer-enlaces a {
+    text-decoration: none;
+    color: #666666;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+    color: var(--color-uva-medio);
+}
+
+
+/* ECCIONES DE LA PÁGINA DE INICIO (PORTADA) */
+
+.banner-navegacion {
     background-image: url('imagenes/marmol.jpeg');
     background-size: cover;
     background-position: center;
     padding: 80px 80px;
-
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-} 
+}
 
 .contenido-banner {
     width: 45%;
     text-align: left;
 }
 
-.imagen-banner-contenedor{
-    width: 45%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.foto-maquillaje-banner {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 24px;
-}
-
 .contenido-banner h1 {
     font-size: 60px;
-    color: #29032e;
+    color: var(--color-uva-oscuro);
     margin: 0 0 20px 0;
     line-height: 1.2;
 }
@@ -84,25 +196,18 @@ body {
     margin-bottom: 30px;
 }
 
-button {
-    background-color: #d4927db7;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 20px; 
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgb(72, 11, 31);
-    transition: all 0.3s ease;
+.imagen-banner-contenedor {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-button:hover {
-    background-color: #130108;
-    box-shadow: 0 4px 15px rgba(112, 38, 4, 0.963);
-    transform: translateX(10px);
+.foto-maquillaje-banner {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 24px;
 }
-
 
 .seccion-categorias {
     text-align: center;
@@ -121,7 +226,6 @@ button:hover {
     font-size: 18px;
     margin-bottom: 40px;
 }
-
 
 .contenedor-esferas {
     display: flex;
@@ -146,32 +250,21 @@ button:hover {
 .esfera-imagen {
     width: 300px;
     height: 300px;
-    border-radius: 50%; 
-    box-shadow: 0 0 20px rgb(96, 52, 10); 
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgb(96, 52, 10);
     background-size: cover;
     background-position: center;
     border: 3px solid #ffffff;
 }
 
-
-.esfera-ojos {
-    background-image: url('../proyecto/imagenes/ojos/ojos.jpeg');
-}
-
-.esfera-labios {
-    background-image: url('../proyecto/imagenes/labios/labios.jpeg');
-    background-position: center 30%;
-}
-
-.esfera-rostro {
-    background-image: url('../proyecto/imagenes/rostro/rostro.jpeg');
-}
-
+.esfera-ojos { background-image: url('../proyecto/imagenes/ojos/ojos.jpeg'); }
+.esfera-labios { background-image: url('../proyecto/imagenes/labios/labios.jpeg'); background-position: center 30%; }
+.esfera-rostro { background-image: url('../proyecto/imagenes/rostro/rostro.jpeg'); }
 
 .tarjeta-categoria button {
     padding: 6px 16px;
     font-size: 16px;
-    background-color: #d4927db7;
+    background-color: var(--color-terracota);
     color: #000000;
     box-shadow: none;
 }
@@ -181,8 +274,8 @@ button:hover {
     color: white;
 }
 
-/*catalogo*/
 
+/* SECCIÓN DE CATÁLOGO (GRID DE TARJETAS)*/
 .seccion-catalogo {
     padding: 40px 50px;
     background-color: #ffffff;
@@ -192,8 +285,8 @@ button:hover {
     color: #888888;
     font-size: 16px;
     margin-bottom: 40px;
+    text-align: left;
 }
-
 
 .grid-productos {
     display: flex;
@@ -206,27 +299,26 @@ button:hover {
 .tarjeta-producto {
     background-color: #ffffff;
     width: 260px;
-    border-radius: 16px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
-    border: 1px solid #f2f2f2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: var(--border-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .tarjeta-producto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(71, 8, 42, 0.12); 
+    box-shadow: 0 8px 25 rgba(71, 8, 42, 0.12);
 }
-
 
 .foto-producto-placeholder {
     width: 100%;
     height: 200px;
-    background-color: #fbe7eb;
+    background-color: var(--color-rosa-placeholder);
     background-image: none;
+    background-size: cover;
+    background-position: center;
 }
-
 
 .info-producto {
     padding: 20px;
@@ -237,13 +329,13 @@ button:hover {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #47082a; 
+    color: var(--color-uva-medio);
     font-weight: bold;
 }
 
 .titulo-producto {
     font-size: 20px;
-    color: #29032e;
+    color: var(--color-uva-oscuro);
     margin: 5px 0 10px 0;
 }
 
@@ -254,7 +346,6 @@ button:hover {
     margin: 0 0 15px 0;
 }
 
-
 .botones-tarjeta {
     display: flex;
     justify-content: space-between;
@@ -262,103 +353,15 @@ button:hover {
 }
 
 
-.btn-ver-mas {
-    background-color: #ffffff;
-    color: #47082a;
-    border: 1px solid #47082a;
-    padding: 8px 12px;
-    font-size: 12px;
-    border-radius: 12px;
-}
+/* SECCIÓN DE CARRITO DE COMPRAS Y SOPORTE */
 
-.btn-ver-mas:hover {
-    background-color: #fbe7eb;
-    transform: none;
-    box-shadow: none;
-}
-
-
-.btn-agregar {
-    background-color: #d4927db7; 
-    color: white;
-    padding: 8px 16px;
-    font-size: 12px;
-    border-radius: 12px;
-    box-shadow: none;
-    flex: 1; 
-}
-
-.btn-agregar:hover {
-    background-color: #29032e;
-    transform: none;
-    box-shadow: none;
-}
-/* --- FOTOS DE OJOS --- */
-.foto-producto-placeholder.ojos-0 { background-image: url('imagenes/ojos/ojos1.jpg'); }
-.foto-producto-placeholder.ojos-1 { background-image: url('imagenes/ojos/ojos2.jpg'); }
-.foto-producto-placeholder.ojos-2 { background-image: url('imagenes/ojos/ojos3.jpeg'); }
-.foto-producto-placeholder.ojos-3 { background-image: url('imagenes/ojos/ojos4.webp'); }
-.foto-producto-placeholder.ojos-4 { background-image: url('imagenes/ojos/ojos5.webp'); }
-.foto-producto-placeholder.ojos-5 { background-image: url('imagenes/ojos/ojos6.jpeg'); }
-.foto-producto-placeholder.ojos-6 { background-image: url('imagenes/ojos/ojos7.avif'); }
-.foto-producto-placeholder.ojos-7 { background-image: url('imagenes/ojos/ojos8.png'); }
-
-/* --- FOTOS DE LABIOS --- */
-.foto-producto-placeholder.labios-8 { background-image: url('imagenes/labios/labios1.jpg'); }
-.foto-producto-placeholder.labios-9 { background-image: url('imagenes/labios/labios2.jpg'); }
-.foto-producto-placeholder.labios-10 { background-image: url('imagenes/labios/labios3.avif'); }
-.foto-producto-placeholder.labios-11 { background-image: url('imagenes/labios/labios4.jpg'); }
-.foto-producto-placeholder.labios-12 { background-image: url('imagenes/labios/labios5.webp'); }
-.foto-producto-placeholder.labios-13 { background-image: url('imagenes/labios/labios6.webp'); }
-.foto-producto-placeholder.labios-14 { background-image: url('imagenes/labios/labios7.jpeg'); }
-.foto-producto-placeholder.labios-15 { background-image: url('imagenes/labios/labios8.webp'); }
-
-/* --- FOTOS DE ROSTRO --- */
-.foto-producto-placeholder.rostro-16 { background-image: url('imagenes/rostro/rostro1.png'); }
-.foto-producto-placeholder.rostro-17 { background-image: url('imagenes/rostro/rostro2.png'); }
-.foto-producto-placeholder.rostro-18 { background-image: url('imagenes/rostro/rostro3.jpg'); }
-.foto-producto-placeholder.rostro-19 { background-image: url('imagenes/rostro/rostro4.jpeg'); }
-.foto-producto-placeholder.rostro-20 { background-image: url('imagenes/rostro/rostro5.png'); }
-.foto-producto-placeholder.rostro-21 { background-image: url('imagenes/rostro/rostro6.webp'); }
-.foto-producto-placeholder.rostro-22 { background-image: url('imagenes/rostro/rostro7.jpeg'); }
-.foto-producto-placeholder.rostro-23 { background-image: url('imagenes/rostro/rostro8.jpg'); }
-
-
-.foto-producto-placeholder {
-    background-size: cover;
-    background-position: center;
-}
-
-.pie-pagina {
+.contenedor-flexible-carrito,
+.contenedor-flexible-soporte {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 30px 80px;
-    background-color: #faf5f6;
-    border-top: 1px solid #f2e6e8;
-    font-size: 14px;
-    margin-top: 50px; 
-    clear:both;
-    width: 100%;
-    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
 }
-
-.footer-copyright {
-    color: #888888;
-}
-
-.footer-enlaces a {
-    text-decoration: none;
-    color: #666666;
-    margin-left: 20px; 
-    transition: color 0.3s ease;
-}
-
-.footer-enlaces a:hover {
-    color: #47082a; 
-}
-
-/* estilo carrito.html */
 
 .seccion-carrito {
     padding: 40px 80px;
@@ -373,14 +376,6 @@ button:hover {
     text-align: left;
 }
 
-.contenedor-flexible-carrito {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-
 .productos-carrito-lista {
     width: 65%;
 }
@@ -393,8 +388,8 @@ button:hover {
 
 .tabla-carrito th {
     padding: 15px;
-    border-bottom: 2px solid #29032e;
-    color: #29032e;
+    border-bottom: 2px solid var(--color-uva-oscuro);
+    color: var(--color-uva-oscuro);
     font-size: 18px;
 }
 
@@ -404,7 +399,6 @@ button:hover {
     font-size: 16px;
     color: #333333;
 }
-
 
 .btn-eliminar-item {
     background-color: transparent;
@@ -421,21 +415,47 @@ button:hover {
     transform: none;
     box-shadow: none;
 }
-
-.resumen-pago-tarjeta {
-    width: 30%;
+/* FORMULARIOS*/
+.contenedor-formulario {
+    padding: 60px 20px;
     background-color: #ffffff;
-    border: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: center;
+    min-height: 55vh;
+}
+
+.subtitulo-formulario {
+    color: #888888;
+    font-size: 16px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* --- Cajas de Resumen y Tarjetas Laterales --- */
+.resumen-pago-tarjeta,
+.tarjeta-formulario,
+.historial-tickets-contenedor {
+    background-color: #ffffff;
+    border: var(--border-light);
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
 
-.resumen-pago-tarjeta h3 {
+.resumen-pago-tarjeta {
+    width: 30%;
+}
+
+.resumen-pago-tarjeta h3,
+.tarjeta-formulario h2 {
     margin-top: 0;
-    color: #29032e;
+    color: var(--color-uva-oscuro);
     font-size: 22px;
+}
+
+.tarjeta-formulario h2 {
+    font-size: 28px;
 }
 
 .fila-resumen {
@@ -446,17 +466,16 @@ button:hover {
 }
 
 .envio-gratis {
-    color: #47082a;
+    color: var(--color-uva-medio);
     font-weight: bold;
 }
 
 .total-destacado {
     font-size: 20px;
     font-weight: bold;
-    color: #29032e;
+    color: var(--color-uva-oscuro);
     margin-top: 20px;
 }
-
 
 .btn-comprar-total {
     width: 100%;
@@ -467,80 +486,9 @@ button:hover {
 
 .btn-vaciar {
     width: 100%;
-    background-color: #ffffff;
-    color: #666666;
-    border: 1px solid #cccccc;
     margin-top: 10px;
     padding: 10px;
     border-radius: 12px;
-    box-shadow: none;
-}
-
-.btn-vaciar:hover {
-    background-color: #f5f5f5;
-    color: #000000;
-    box-shadow: none;
-    transform: none;
-}
-
-/* página de datos */
-.contenedor-formulario {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    min-height: 55vh;
-}
-
-.tarjeta-formulario {
-    width: 100%;
-    max-width: 500px;
-    background-color: #ffffff;
-    border: 1px solid #f2f2f2;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
-    text-align: left;
-}
-
-.tarjeta-formulario h2 {
-    color: #29032e;
-    margin-top: 0;
-    font-size: 28px;
-}
-
-.subtitulo-formulario {
-    color: #888888;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-
-.grupo-input {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.grupo-input label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #47082a;
-}
-
-.grupo-input input {
-    padding: 12px 15px;
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: inherit;
-    transition: border-color 0.3s;
-}
-
-
-.grupo-input input:focus {
-    outline: none;
-    border-color: #47082a;
 }
 
 .botones-formulario {
@@ -549,6 +497,185 @@ button:hover {
     margin-top: 30px;
 }
 
-.botones-formulario button {
+
+/* VISTA DE DETALLE PREMIUM */
+.contenedor-detalle-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80px 100px;
+    background-color: #ffffff;
+    gap: 80px;
+}
+
+.columna-foto-detalle {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.foto-detalle-vista {
+    width: 100% !important;
+    height: 580px !important; 
+    background-color: transparent !important; 
+    background-size: contain !important; 
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.columna-info-detalle {
+    width: 45%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.fila-tag-resenas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.categoria-detalle-tag {
+    background-color: var(--color-rosa-placeholder);
+    color: var(--color-uva-medio);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.columna-info-detalle h1 {
+    font-size: 42px;
+    color: var(--color-uva-oscuro);
+    margin: 0 0 25px 0;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.precio-detalle-tag {
+    font-size: 34px;
+    font-weight: bold;
+    color: var(--color-uva-medio);
+    margin: 0 0 35px 0;
+}
+
+.descripcion-detalle-texto {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.separador-detalle {
+    border: 0;
+    border-top: var(--border-light);
+    margin-bottom: 40px;
+}
+
+.acciones-detalle {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+#btn-agregar-detalle {
+    background-color: var(--color-terracota) !important;
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    border-radius: 25px; 
+    flex: 2;
+    font-weight: bold;
+    height: 54px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(72, 11, 31);
+    transition: all 0.3s ease;
+}
+
+#btn-agregar-detalle:hover {
+    background-color: #130108;
+    transform: translateX(10px);
+}
+
+#btn-volver {
+    background-color: #ffffff;
+    color: var(--color-uva-medio);
+    border: 1px solid var(--color-uva-medio);
+    padding: 15px 25px;
+    font-size: 15px;
+    border-radius: 25px;
     flex: 1;
+    box-shadow: none;
+    height: 54px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/*  MAPEADO UNIFICADO DE IMÁGENES (HERENCIA DIRECTA)*/
+
+/* --- CATEGORÍA: OJOS --- */
+.ojos-0 { background-image: url('imagenes/ojos/ojos1.jpg'); }
+.ojos-1 { background-image: url('imagenes/ojos/ojos2.jpg'); }
+.ojos-2 { background-image: url('imagenes/ojos/ojos3.jpeg'); }
+.ojos-3 { background-image: url('imagenes/ojos/ojos4.webp'); }
+.ojos-4 { background-image: url('imagenes/ojos/ojos5.webp'); }
+.ojos-5 { background-image: url('imagenes/ojos/ojos6.jpeg'); }
+.ojos-6 { background-image: url('imagenes/ojos/ojos7.avif'); }
+.ojos-7 { background-image: url('imagenes/ojos/ojos8.png'); }
+
+/* --- CATEGORÍA: LABIOS --- */
+.labios-8 { background-image: url('imagenes/labios/labios1.jpg'); }
+.labios-9 { background-image: url('imagenes/labios/labios2.jpg'); }
+.labios-10 { background-image: url('imagenes/labios/labios3.avif'); }
+.labios-11 { background-image: url('imagenes/labios/labios4.jpg'); }
+.labios-12 { background-image: url('imagenes/labios/labios5.webp'); }
+.labios-13 { background-image: url('imagenes/labios/labios6.webp'); }
+.labios-14 { background-image: url('imagenes/labios/labios7.jpeg'); }
+.labios-15 { background-image: url('imagenes/labios/labios8.webp'); }
+
+/* --- CATEGORÍA: ROSTRO --- */
+.rostro-16 { background-image: url('imagenes/rostro/rostro1.png'); }
+.rostro-17 { background-image: url('imagenes/rostro/rostro2.png'); }
+.rostro-18 { background-image: url('imagenes/rostro/rostro3.jpg'); }
+.rostro-19 { background-image: url('imagenes/rostro/rostro4.jpeg'); }
+.rostro-20 { background-image: url('imagenes/rostro/rostro5.png'); }
+.rostro-21 { background-image: url('imagenes/rostro/rostro6.webp'); }
+.rostro-22 { background-image: url('imagenes/rostro/rostro7.jpeg'); }
+.rostro-23 { background-image: url('imagenes/rostro/rostro8.jpg'); }
+
+
+/* MEDIA QUERIES (SISTEMA DE DISEÑO RESPONSIVO)*/
+@media screen and (max-width: 768px) {
+    .banner-navegacion {
+        flex-direction: column !important;
+        padding: 40px 20px;
+    }
+
+    .contenido-banner,
+    .imagen-banner-contenedor {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .contenedor-flexible-carrito,
+    .contenedor-flexible-soporte {
+        flex-direction: column !important;
+    }
+
+    .productos-carrito-lista,
+    .resumen-pago-tarjeta {
+        width: 100% !important;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }

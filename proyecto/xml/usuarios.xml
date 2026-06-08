@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+    <usuario>
+        <username>steph_prieto</username>
+        <password>uv2026</password>
+        <nombre>Stephanie Prieto</nombre>
+    </usuario>
+    <usuario>
+        <username>profesor_web</username>
+        <password>ordinario10</password>
+        <nombre>Profesor Titular</nombre>
+    </usuario>
+</usuarios>
