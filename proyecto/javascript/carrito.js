@@ -6,18 +6,37 @@ let productosEnBolsa = [];
 
 function recuperarProductoDeURL() {
     const parametros = new URLSearchParams(window.location.search);
-    const nombreUrl = parametros.get("nombre");
-    const precioUrl = parametros.get("precio");
+    
+    // CORRECCIÓN CLAVE: Atrapamos las llaves exactas que manda detalle.js
+    const nombre1 = parametros.get("nombre1");
+    const precio1 = parametros.get("precio1");
+    const nombre2 = parametros.get("nombre2");
+    const precio2 = parametros.get("precio2");
 
-    if (nombreUrl && precioUrl) {
+    // Caso A: Si los datos vienen correctamente mapeados desde el Detalle
+    if (nombre1 && precio1) {
         productosEnBolsa.push({
-            nombre: nombreUrl,
-            precio: parseFloat(precioUrl)
+            nombre: nombre1,
+            precio: parseFloat(precio1)
         });
-    } else {
+        
+        // Si además viene el segundo producto estático para simular el paquete, lo metemos
+        if (nombre2 && precio2) {
+            productosEnBolsa.push({
+                nombre: nombre2,
+                precio: parseFloat(precio2)
+            });
+        }
+    } 
+    // Caso B: Si entran directo al carrito vacío por el menú, dejamos productos de muestra
+    else {
         productosEnBolsa.push({
             nombre: "Máscara Volume Noir - Ojos",
             precio: 220.00
+        });
+        productosEnBolsa.push({
+            nombre: "Labial Velvet Rouge - Labios",
+            precio: 260.00
         });
     }
 }
@@ -26,11 +45,13 @@ function regresar() {
     window.location.href = "catalogo.html";
 }
 
+// Modificamos para mandar el bloque al Login
 function avanzarAFormulario() {
     if (productosEnBolsa.length === 0) {
         alert("Tu bolsa está vacía. ¡Agrega cosméticos en el catálogo primero!");
         return;
     }
+    // Mandamos el primer artículo en la URL para no perder el hilo en el formulario
     let item = productosEnBolsa[0];
     alert("Para procesar tu bolsa de cosméticos, por favor inicia sesión primero.");
     window.location.href = "login.html?nombre=" + encodeURIComponent(item.nombre) + "&precio=" + item.precio;
